@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8" /><title>Login</title>
+<style>
+  /* Base Styles */
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f7fa;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #2c3e50;
+  }
+
+  /* Container */
+  body {
+    background: linear-gradient(135deg, #3498db, #2c3e50);
+  }
+
+  /* Login Form Container */
+  #loginForm {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    animation: fadeInUp 0.5s ease-out;
+  }
+
+  /* Header */
+  h1 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #2c3e50;
+    font-weight: 600;
+  }
+
+  /* Form Elements */
+  label {
+    display: block;
+    margin-bottom: 1rem;
+    font-weight: 500;
+  }
+
+  input[type="text"],
+  select {
+    width: 100%;
+    padding: 12px;
+    margin-top: 0.5rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+  }
+
+  input[type="text"]:focus,
+  select:focus {
+    border-color: #3498db;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+  }
+
+  /* Button */
+  button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+  }
+
+  button[type="submit"]:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+  }
+
+  button[type="submit"]:active {
+    transform: translateY(0);
+  }
+
+  /* Animation */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Responsive Design */
+  @media (max-width: 480px) {
+    #loginForm {
+      padding: 1.5rem;
+      margin: 1rem;
+    }
+    
+    h1 {
+      font-size: 1.5rem;
+    }
+  }
+</style>
+</head>
+<body>
+  <h1>Login</h1>
+  <form id="loginForm">
+    <label>Username: <input type="text" id="username" required></label><br/><br/>
+    <label>Role:
+      <select id="role">
+        <option value="user">User</option>
+        <option value="member">Member</option>
+        <option value="admin">Admin</option>
+      </select>
+    </label><br/><br/>
+    <button type="submit">Login</button>
+  </form>
+
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', e => {
+      e.preventDefault();
+      const username = document.getElementById('username').value.trim();
+      const role = document.getElementById('role').value;
+      if (!username) {
+        alert('Enter username');
+        return;
+      }
+      localStorage.setItem('username', username);
+      localStorage.setItem('role', role);
+
+      // Redirect based on role
+      if (role === 'admin') window.location.href = 'adminlogin.html';
+      else if (role === 'member') window.location.href = 'memberdashboard.html';
+      else window.location.href = 'userdashboard.html';
+    });
+  </script>
+</body>
+</html>

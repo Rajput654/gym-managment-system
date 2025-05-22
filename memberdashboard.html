@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Member Dashboard</title>
+    <link rel="stylesheet" href="memberdashboard.css">
+  </head>
+  <body>
+    <header>
+      <div class="container header-content">
+        <h1>Member Dashboard</h1>
+        <nav>
+          <a href="user-dashboard.html">User Dashboard</a>
+          <a href="member.html">Member Dashboard</a>
+          <a href="index.html" id="adminLink" style="display: none"
+            >Admin Dashboard</a
+          >
+          <a href="#" id="logout">Logout</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <div class="welcome-message">
+        <p>
+          Welcome, <span id="usernameDisplay"></span>! You are logged in as a
+          <span id="roleDisplay"></span>.
+        </p>
+      </div>
+
+      <div class="dashboard-grid">
+        <div class="card">
+          <h2>Your Membership</h2>
+          <div id="membershipInfo">
+            <p>Loading membership details...</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <h2>Upcoming Sessions</h2>
+          <div id="upcomingSessions">
+            <p>Loading session information...</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <h2>Payment History</h2>
+          <div id="paymentHistory">
+            <p>Loading payment records...</p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+   <script src="memberdashboard.js"></script>
+  </body>
+  
+</html>

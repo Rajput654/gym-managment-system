@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Gym Admin Dashboard</title>
+    <link rel="stylesheet" href="Admindashboard.css">
+  </head>
+  <body>
+    <div class="dashboard">
+      <aside class="sidebar">
+        <h2>Gym Admin</h2>
+        <nav>
+          <ul>
+            <li onclick="loadSection('members')">Manage Members</li>
+            <li onclick="loadSection('viewmembers')">View Members</li>
+            <li onclick="loadSection('bills')">Create Bills</li>
+            <li onclick="loadSection('packages')">Assign Fee Packages</li>
+            <li onclick="loadSection('notifications')">Send Notifications</li>
+            <li onclick="loadSection('supplements')">Supplement Store</li>
+            <li onclick="loadSection('diets')">Diet Plans</li>
+            <li onclick="loadSection('reports')">Export Reports</li>
+          </ul>
+        </nav>
+      </aside>
+
+      <main class="content" id="content">
+        <h2>Welcome to Admin Dashboard</h2>
+        <p>Select a section from the sidebar to begin.</p>
+      </main>
+    </div>
+
+  <script src="Admindashboard.js"></script>
+  </body>
+</html>

@@ -1,0 +1,130 @@
+  * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body,
+      html {
+        height: 100%;
+        font-family: "Montserrat", sans-serif;
+        color: white;
+      }
+
+      .hero {
+        background-image: url("https://images.unsplash.com/photo-1571019613914-85f342c1d4c4");
+        background-size: cover;
+        background-position: center;
+        height: 100vh;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+
+      .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.65);
+        z-index: 1;
+      }
+
+      .content {
+        position: relative;
+        z-index: 2;
+        max-width: 800px;
+        padding: 20px;
+      }
+
+      .content h1 {
+        font-size: 3rem;
+        margin-bottom: 20px;
+        animation: fadeInDown 1s ease-out;
+      }
+
+      .content p {
+        font-size: 1.2rem;
+        margin-bottom: 40px;
+        animation: fadeInUp 1s ease-out;
+      }
+
+      .buttons {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+      }
+
+      .btn {
+        padding: 15px 30px;
+        border: none;
+        text-decoration: none;
+        font-weight: bold;
+        border-radius: 30px;
+        font-size: 1rem;
+        transition: transform 0.3s, background-color 0.3s;
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+      }
+
+      .btn:hover {
+        transform: scale(1.05);
+      }
+
+      .admin {
+        background-color: #ff4d4d;
+        color: white;
+      }
+
+      .user {
+        background-color: #00b894;
+        color: white;
+      }
+
+      .member {
+        background-color: #0984e3;
+        color: white;
+      }
+
+      .signup {
+        background-color: #fdcb6e;
+        color: black;
+      }
+
+      /* Animations */
+      @keyframes fadeInDown {
+        from {
+          opacity: 0;
+          transform: translateY(-20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .content h1 {
+          font-size: 2rem;
+        }
+
+        .btn {
+          font-size: 0.9rem;
+          padding: 12px 25px;
+        }
+      }
